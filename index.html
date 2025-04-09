@@ -27,20 +27,20 @@
   <h1>Click the Button to Watch Drake - God's Plan 🎬</h1>
   <button onclick="openVideos()">Open Drake Video</button>
 
-  <!-- Auto-playing God's Plan audio -->
-  <audio autoplay loop>
+  <audio id="drakeAudio" loop>
     <source src="https://ia802800.us.archive.org/11/items/01godsplan_202001/01-gods-plan.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 
   <script>
-    // Drake - God's Plan video link
     const drakeGodsPlanLink = "https://www.youtube.com/watch?v=xpVfcZ0ZcFM";
-
-    // Change this number to decide how many tabs to open
-    const videoCount = 500; // Opens 500 tabs with the video
+    const videoCount = 500;
 
     function openVideos() {
+      // Play the song
+      document.getElementById("drakeAudio").play();
+
+      // Open the video tabs
       for (let i = 0; i < videoCount; i++) {
         window.open(drakeGodsPlanLink, "_blank");
       }
