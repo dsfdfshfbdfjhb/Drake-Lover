@@ -27,6 +27,10 @@
   <h1>Click the Button to Watch Drake - God's Plan 🎬</h1>
   <button onclick="openVideos()">Open Drake Video</button>
 
+  <!-- Hidden button to simulate user click for autoplay -->
+  <button id="fakeClickButton" style="display:none;" onclick="playAudio()"></button>
+
+  <!-- God's Plan Audio -->
   <audio id="drakeAudio" loop>
     <source src="https://ia802800.us.archive.org/11/items/01godsplan_202001/01-gods-plan.mp3" type="audio/mp3">
     Your browser does not support the audio element.
@@ -36,15 +40,26 @@
     const drakeGodsPlanLink = "https://www.youtube.com/watch?v=xpVfcZ0ZcFM";
     const videoCount = 500;
 
-    function openVideos() {
-      // Play the song
-      document.getElementById("drakeAudio").play();
+    function playAudio() {
+      const audio = document.getElementById("drakeAudio");
+      audio.play().catch(e => {
+        console.log("Autoplay failed:", e);
+      });
+    }
 
-      // Open the video tabs
+    function openVideos() {
+      playAudio(); // Play audio after real click
       for (let i = 0; i < videoCount; i++) {
         window.open(drakeGodsPlanLink, "_blank");
       }
     }
+
+    // Try to simulate a user click on page load to play audio
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.getElementById("fakeClickButton").click();
+      }, 500); // Small delay improves success rate
+    });
   </script>
 
 </body>
