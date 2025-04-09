@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Second Website</title>
+  <title>Drake's Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+      background-color: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #cc0000;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Website #2!</h1>
-  <p>This is my second GitHub Pages site!</p>
+
+  <h1>Click the Button to Watch a Video 🎬</h1>
+  <button onclick="openVideo()">Open YouTube</button>
+
+  <script>
+    // 👇 Change this number to pick which video to open
+    const videoNumber = 1;
+
+    // 👇 You can add more YouTube links here
+    const videoLinks = {
+      1: "https://www.youtube.com/watch?v=xpVfcZ0ZcFM", // Rick Astley 😎
+      2: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Surprise!
+      3: "https://www.youtube.com/watch?v=ktvTqknDobU", // Imagine Dragons
+    };
+
+    function openVideo() {
+      const url = videoLinks[videoNumber];
+      if (url) {
+        window.open(url, "_blank");
+      } else {
+        alert("Invalid video number. Please check the list.");
+      }
+    }
+  </script>
+
 </body>
 </html>
