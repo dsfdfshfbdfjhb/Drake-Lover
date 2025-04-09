@@ -24,26 +24,20 @@
 </head>
 <body>
 
-  <h1>Click the Button to Watch Drake Videos 🎬</h1>
-  <button onclick="openVideos()">Open Drake Videos</button>
+  <h1>Click the Button to Watch Drake - God's Plan 🎬</h1>
+  <button onclick="openVideos()">Open Drake Video</button>
 
   <script>
-    // Drake video links
-    const drakeVideos = [
-      "https://www.youtube.com/watch?v=xpVfcZ0ZcFM", // Drake Video 1
-      "https://www.youtube.com/watch?v=ktvTqknDobU", // Drake Video 2
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Drake Video 3 (Rickroll 😉)
-    ];
+    // Drake - God's Plan video link
+    const drakeGodsPlanLink = "https://www.youtube.com/watch?v=xpVfcZ0ZcFM";
 
     // Change this number to decide how many tabs to open
-    const videoCount = 10; // Example: Opens the first 2 videos
+    const videoCount = 3; // Example: Opens the Drake - God's Plan video in 3 tabs
 
     function openVideos() {
-      // Loop through the number of videos you want to open
+      // Loop through the number of tabs you want to open
       for (let i = 0; i < videoCount; i++) {
-        if (drakeVideos[i]) {
-          window.open(drakeVideos[i], "_blank");
-        }
+        window.open(drakeGodsPlanLink, "_blank");
       }
     }
   </script>
