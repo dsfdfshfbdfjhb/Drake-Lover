@@ -24,26 +24,26 @@
 </head>
 <body>
 
-  <h1>Click the Button to see the goat Drake</h1>
-  <button onclick="openVideo()">Drake</button>
+  <h1>Click the Button to Watch Drake Videos 🎬</h1>
+  <button onclick="openVideos()">Open Drake Videos</button>
 
   <script>
-    // 👇 Change this number to pick which video to open
-    const videoNumber = 10;
+    // Drake video links
+    const drakeVideos = [
+      "https://www.youtube.com/watch?v=xpVfcZ0ZcFM", // Drake Video 1
+      "https://www.youtube.com/watch?v=ktvTqknDobU", // Drake Video 2
+      "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Drake Video 3 (Rickroll 😉)
+    ];
 
-    // 👇 You can add more YouTube links here
-    const videoLinks = {
-      1: "https://www.youtube.com/watch?v=xpVfcZ0ZcFM", // Rick Astley 😎
-      2: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Surprise!
-      3: "https://www.youtube.com/watch?v=ktvTqknDobU", // Imagine Dragons
-    };
+    // Change this number to decide how many tabs to open
+    const videoCount = 10; // Example: Opens the first 2 videos
 
-    function openVideo() {
-      const url = videoLinks[videoNumber];
-      if (url) {
-        window.open(url, "_blank");
-      } else {
-        alert("Invalid video number. Please check the list.");
+    function openVideos() {
+      // Loop through the number of videos you want to open
+      for (let i = 0; i < videoCount; i++) {
+        if (drakeVideos[i]) {
+          window.open(drakeVideos[i], "_blank");
+        }
       }
     }
   </script>
